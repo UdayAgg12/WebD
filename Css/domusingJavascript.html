@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DOM Manipulation Example</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f4f6f9;
+  }
+  h1 {
+    color: #004080;
+    text-align: center;
+  }
+  #message {
+    padding: 10px;
+    background: #e0f7fa;
+    border-radius: 5px;
+    margin: 15px 0;
+  }
+  button {
+    padding: 10px 15px;
+    margin-right: 5px;
+    border: none;
+    background: #0b63ff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  button:hover {
+    background: #084bb8;
+  }
+</style>
+</head>
+<body>
+
+<h1>JavaScript DOM Example</h1>
+
+<p id="message">This is the original message.</p>
+
+<button onclick="changeText()">Change Text</button>
+<button onclick="changeStyle()">Change Style</button>
+<button onclick="addElement()">Add New Element</button>
+
+<ul id="list">
+  <li>HTML</li>
+  <li>CSS</li>
+</ul>
+
+<script>
+  // Change the text content of an element
+  function changeText() {
+    document.getElementById("message").textContent = "The text has been changed using DOM!";
+  }
+
+  // Change style of an element
+  function changeStyle() {
+    let msg = document.getElementById("message");
+    msg.style.background = "#ffe0b2";
+    msg.style.color = "#b71c1c";
+    msg.style.fontWeight = "bold";
+  }
+
+  // Add a new list item dynamically
+  function addElement() {
+    let li = document.createElement("li");
+    li.textContent = "JavaScript (added via DOM)";
+    document.getElementById("list").appendChild(li);
+  }
+</script>
+
+</body>
+</html>

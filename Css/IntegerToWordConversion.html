@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number to Words Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body><center><div style="border: solid ; width: 15cm ; border-radius: 1cm;background-color: beige;">
+    <h1 style="color: rgb(20, 18, 19); background-color: rgb(164, 89, 101);">Convert Integer to Words</h1>
+    <p style="background-color: rgb(66, 66, 103) ; color: aquamarine;">Enter an integer between 0 and 999:</p>
+    <input type="text" id="numberInput" placeholder="Enter number">
+    <br><br>
+    <button onclick="convertToWords()" style="color: darkblue; background-color: yellow; border-radius:10cm;">Convert</button>
+    <div id="result"></div><br>
+</div>
+</center>
+
+    <script>
+        function convertToWords() {
+            let input = document.getElementById("numberInput").value.trim();
+
+            // Check if the input is a valid integer
+            if (!/^\d+$/.test(input)) {
+                document.getElementById("result").innerHTML = "Invalid integer";
+                return;
+            }
+
+            let num = parseInt(input);
+
+            // Range Check
+            if (num < 0 || num > 999) {
+                document.getElementById("result").innerHTML = "Out of range";
+                return;
+            }
+
+            // Arrays for number words
+            const ones = ["zero","one","two","three","four","five","six","seven","eight","nine",
+                         "ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen",
+                         "seventeen","eighteen","nineteen"];
+            const tens = ["","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"];
+
+            let words = "";
+
+            if (num < 20) {
+                words = ones[num];
+            } else if (num < 100) {
+                words = tens[Math.floor(num / 10)];
+                if (num % 10 !== 0) {
+                    words += " " + ones[num % 10];
+                }
+            } else {
+                words = ones[Math.floor(num / 100)] + " hundred";
+                let remainder = num % 100;
+                if (remainder > 0) {
+                    if (remainder < 20) {
+                        words += " " + ones[remainder];
+                    } else {
+                        words += " " + tens[Math.floor(remainder / 10)];
+                        if (remainder % 10 !== 0) {
+                            words += " " + ones[remainder % 10];
+                        }
+                    }
+                }
+            }
+
+            document.getElementById("result").innerHTML = words;
+        }
+    </script>
+</body>
+</html>

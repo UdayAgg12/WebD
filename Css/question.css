@@ -1,0 +1,32 @@
+#outer{
+    height: 200px;
+    width: 70px;
+    border: 2px solid black;
+}
+.inner{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 50%;
+}
+#red{
+    background-color: red;
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}
+#square{
+    height: 150px;
+    width: 300px;
+    background-color: gray;
+    border: 5px black dotted;
+    margin-top: 20px;
+    margin-right: 1em;
+    margin-bottom: 40px;
+    margin-left: 2em;
+    padding: 1em;
+}

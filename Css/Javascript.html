@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Text, Fonts & Links Example</title>
+
+<!-- Internal CSS for text, fonts, and links -->
+<style>
+  /* Base text styling */
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+
+  h1, h2 {
+    font-family: "Trebuchet MS", sans-serif;
+    color: #004080;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  /* Link styles */
+  a {
+    color: #0066cc;
+    text-decoration: none; /* remove underline */
+    font-weight: bold;
+  }
+
+  a:hover {
+    color: #ff6600;
+    text-decoration: underline;
+  }
+
+  a:visited {
+    color: #800080; /* purple for visited links */
+  }
+
+  /* Cascading & overriding example */
+  .highlight {
+    color: darkgreen;
+    font-weight: bold;
+  }
+
+  /* Inline style will override this */
+  .override {
+    color: crimson;
+  }
+</style>
+</head>
+<body>
+
+<h1>CSS Text, Fonts & Links</h1>
+<h2>Using the Power of Cascading Style Sheets</h2>
+
+<p>
+  This paragraph is styled using CSS rules for <em>font-family</em>, <em>font-size</em>,
+  and <em>line-height</em>. Notice how text is justified for a clean look. CSS
+  allows you to control the presentation of your content without changing the
+  HTML structure.
+</p>
+
+<p>
+  Here is a <a href="https://www.example.com" target="_blank">sample link</a> you can click.
+  Hover over it to see the hover effect. Visit it once to see the visited link color.
+</p>
+
+<p class="highlight">
+  This is a highlighted text using a special CSS class.
+</p>
+
+<p class="override" style="color: blue;">
+  This text has an <strong>inline style</strong> that overrides the class color because of
+  the CSS cascade and specificity rules.
+</p>
+
+</body>
+</html>

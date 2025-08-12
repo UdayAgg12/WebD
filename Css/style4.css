@@ -1,0 +1,57 @@
+:root {
+  --bg: #f7f9fc;
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #0b63ff;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  color: #111827;
+}
+
+header {
+  background: linear-gradient(90deg,#ffffffcc, #f0f4ffcc);
+  padding: 1rem 1.25rem;
+}
+
+h1 { margin: 0 0 0.25rem 0; font-size: 1.6rem; }
+.subtitle { margin: 0; color: var(--muted); }
+
+main { padding: 1rem 1.25rem 2rem 1.25rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+}
+
+.card h3 { margin: 0 0 0.5rem 0; }
+.card p { margin: 0.35rem 0; }
+
+.note { color: var(--muted); font-size: 0.95rem; }
+.small { font-size: 0.9rem; color: var(--muted); }
+
+/* An example hover effect from external CSS */
+.card:hover {
+  transform: translateY(-4px);
+  transition: transform 220ms ease;
+}
+
+footer { padding: 0.75rem 1.25rem; color: var(--muted); font-size: 0.9rem; }
+
+/* Demonstrate a class used in external file that internal CSS may override */
+.card h3 { color: #0b3a8c; }
+
+/* End of styles.css */

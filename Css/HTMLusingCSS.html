@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo: External, Internal & Inline CSS</title>
+
+  <!-- Link to external stylesheet (styles.css) -->
+  <link rel="stylesheet" href="style4.css">
+
+  <!-- Internal stylesheet (embedded in the head) -->
+  <style>
+    /* Internal CSS: affects this page and can override external styles when more specific */
+    header {
+      border-bottom: 4px solid rgba(0,0,0,0.08);
+      padding-bottom: 0.75rem;
+    }
+
+    /* Demonstrate specificity: this will override the external .card h3 rule if equal specificity comes into play */
+    .card h3 {
+      font-style: italic;
+    }
+
+    /* A small responsive tweak using internal CSS */
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Understanding CSS: External, Internal & Inline</h1>
+    <p class="subtitle">A compact example showing how to use each method and how specificity works.</p>
+  </header>
+
+  <main>
+    <section class="grid">
+      <article class="card">
+        <h3>External CSS</h3>
+        <p>This card is primarily styled by the <code>styles.css</code> external stylesheet.</p>
+        <p class="note">External styles are ideal for site-wide styles and reuse.</p>
+        <!-- Inline style: only this element gets the blue background due to the inline attribute -->
+        <button style="padding: 0.5rem 1rem; border-radius: 6px; border: none; background: #0b63ff; color: white; cursor: pointer;">Inline Styled Button</button>
+      </article>
+
+      <article class="card">
+        <h3>Internal CSS</h3>
+        <p>This card shows styles defined in the document's <code>&lt;style&gt;</code> block (inside the head).</p>
+        <p class="note">Internal CSS is useful for single-page customizations or small demos.</p>
+        <!-- Example of an element with an inline style that overrides both internal and external rules -->
+        <p style="color: #b4004e; font-weight: 700;">This inline-styled paragraph overrides color from other styles.</p>
+      </article>
+
+      <aside class="card">
+        <h3>Specificity & Cascade</h3>
+        <p>Order of precedence from lowest to highest: browser defaults → external → internal → inline. Specificity and the cascade can change that order.</p>
+        <p class="small">Try editing <code>styles.css</code> and the &lt;style&gt; block to see which rule wins.</p>
+      </aside>
+    </section>
+
+    <section style="margin-top: 1.25rem;">
+      <h2>Quick Examples</h2>
+      <ul>
+        <li><strong>External file:</strong> styles.css — layout, base colors, typography</li>
+        <li><strong>Internal:</strong> Page-specific tweaks inside &lt;style&gt; in the head</li>
+        <li><strong>Inline:</strong> style="..." applied directly on an element for one-off overrides</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Created for demonstration • Try resizing the window to see the responsive grid.</p>
+  </footer>
+
+</body>
+</html>
+

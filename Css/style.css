@@ -1,0 +1,18 @@
+*{
+     /*selects all entire code */
+}
+h3,h1{
+    color: #b92b27;
+}
+#login{
+    /* used for id selector */
+    background-color: white;
+}
+#signup{
+    background-color: #b92b27;
+    color: white;
+}
+.upvote{
+    background-color: green;
+    color: aliceblue;
+}
